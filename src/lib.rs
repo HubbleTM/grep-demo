@@ -36,7 +36,7 @@ pub fn search<'a>(query: &str, contents: &'a str) -> Vec<&'a str> {
     let mut result: Vec<&str> = Vec::new();
 
     for line in contents.lines() {
-        if line.to_lowercase().contains(query) {
+        if line.to_lowercase().contains(&query.to_lowercase()) {
             result.push(line);
         }
     }
